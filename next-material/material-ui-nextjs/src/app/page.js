@@ -8,12 +8,19 @@ import ProTip from "@/components/ProTip";
 import Copyright from "@/components/Copyright";
 import CustomAppBar from "@/components/CustomAppBar";
 import Head from "next/head";
+import CoverImg from "@/components/CoverImg";
+import CustomBottomNav from "@/components/CustomBottomNav";
+import BottomDrawer from "@/components/BottomDrawer";
 
 export default function Home() {
   return (
     <>
       <Container maxWidth="lg">
         <CustomAppBar />
+        <CoverImg />
+
+        <BottomDrawer />
+        <CustomBottomNav />
       </Container>
     </>
   );
