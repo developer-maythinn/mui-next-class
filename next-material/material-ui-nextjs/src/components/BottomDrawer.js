@@ -10,6 +10,14 @@ import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import {
+  ButtonBase,
+  Icon,
+  Input,
+  InputAdornment,
+  InputBase,
+  TextField,
+} from "@mui/material";
 
 const drawerBleeding = 56;
 
@@ -34,37 +42,46 @@ const Puller = styled("div")(({ theme }) => ({
   top: 8,
   left: "calc(50% - 15px)",
 }));
-
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  "label + &": {
+    marginTop: theme.spacing(3),
+  },
+  "& .MuiInputBase-input": {
+    borderRadius: 30,
+    position: "relative",
+    backgroundColor: "#F3F6F9",
+    border: "1px solid",
+    borderColor: "#E0E3E7",
+    fontSize: 16,
+    width: "auto",
+    padding: "10px 12px",
+    transition: theme.transitions.create([
+      "border-color",
+      "background-color",
+      "box-shadow",
+    ]),
+    // Use the system font instead of the default Roboto font.
+  },
+}));
 function BottomDrawer(props) {
-  const { window } = props;
-  const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
-  };
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
+  const { open, drawerClose, drawerOpen } = props;
   return (
     <Root>
       <CssBaseline />
       <Global
         styles={{
           ".MuiDrawer-root > .MuiPaper-root": {
-            height: `calc(50% - ${drawerBleeding}px)`,
+            height: `calc(46% - ${drawerBleeding}px)`,
             overflow: "visible",
           },
         }}
       />
-      <Box sx={{ textAlign: "center", pt: 1 }}>
-        <Button onClick={toggleDrawer(true)}>Open</Button>
-      </Box>
+
       <SwipeableDrawer
-        // container={container}
         anchor="bottom"
         open={open}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
+        onClose={drawerClose}
+        onOpen={drawerOpen}
         swipeAreaWidth={drawerBleeding}
         disableSwipeToOpen={false}
         ModalProps={{
@@ -84,7 +101,21 @@ function BottomDrawer(props) {
         >
           <Puller />
         </StyledBox>
-        <StyledBox
+        <Box sx={{ p: 4 }}>
+          <BootstrapInput
+            sx={{ width: "100%" }}
+            id="outlined-basic"
+            label="Outlined"
+            variant="outlined"
+            endAdornment={
+              <InputAdornment position="end">
+                <Icon>search</Icon>
+              </InputAdornment>
+            }
+          />
+        </Box>
+
+        {/* <StyledBox
           sx={{
             px: 2,
             pb: 2,
@@ -93,7 +124,7 @@ function BottomDrawer(props) {
           }}
         >
           <Skeleton variant="rectangular" height="100%" />
-        </StyledBox>
+        </StyledBox> */}
       </SwipeableDrawer>
     </Root>
   );

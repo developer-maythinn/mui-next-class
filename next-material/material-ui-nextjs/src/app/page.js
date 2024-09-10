@@ -11,6 +11,7 @@ import Head from "next/head";
 import CoverImg from "@/components/CoverImg";
 import CustomBottomNav from "@/components/CustomBottomNav";
 import BottomDrawer from "@/components/BottomDrawer";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
       <Container maxWidth="lg">
         <CustomAppBar />
         <CoverImg />
+        <Box sx={{ p: 3, mb: 5 }}>
+          <Carousel />
+        </Box>
 
         <BottomDrawer />
         <CustomBottomNav />
