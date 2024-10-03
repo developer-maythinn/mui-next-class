@@ -86,6 +86,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route path="/about" element={<About></About>}></Route>
+        
       </Routes>
     </Context.Provider>
   );

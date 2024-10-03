@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background-color: pink;
+}
+.big-image img{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+.small-images-container{
+  display: flex;
+}
+.small-images img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
