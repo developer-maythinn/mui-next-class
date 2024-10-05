@@ -16,6 +16,8 @@ import Nav from "./components/Context/Nav";
 import { Link, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import About from "./About";
+import CustomHook from "./pages/CustomHook";
+
 // function App() {
 //   const userData = [
 //     { name: "Su Su", age: 25 },
@@ -83,10 +85,11 @@ function App() {
       {/* <a href="/about">Go to about</a> */}
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
+      <Link to="/custom-hook">Custom-hook</Link>
       <Routes>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route path="/about" element={<About></About>}></Route>
-        
+        <Route path="/custom-hook" element={<CustomHook />}></Route>
       </Routes>
     </Context.Provider>
   );
