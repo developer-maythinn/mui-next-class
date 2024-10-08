@@ -17,6 +17,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import About from "./About";
 import CustomHook from "./pages/CustomHook";
+import Hooks from "./pages/Hooks";
+import HookDetail from "./pages/HookDetail";
 
 // function App() {
 //   const userData = [
@@ -83,13 +85,15 @@ function App() {
   return (
     <Context.Provider value={[signedIn, setSignedIn]}>
       {/* <a href="/about">Go to about</a> */}
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link>
       <Link to="/about">About</Link>
-      <Link to="/custom-hook">Custom-hook</Link>
+      <Link to="/custom-hook">Custom-hook</Link> */}
       <Routes>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/custom-hook" element={<CustomHook />}></Route>
+        <Route path="/hooks" element={<Hooks />}></Route>
+        <Route path="/hooks/:id" element={<HookDetail />}></Route>
       </Routes>
     </Context.Provider>
   );
