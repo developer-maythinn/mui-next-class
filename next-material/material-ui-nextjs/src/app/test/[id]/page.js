@@ -1,4 +1,11 @@
+import React from 'react'
 
-export default function Page({ params }) {
-  return <div>My Post: {params.id}</div>;
+function page({ params }) {
+    return (
+        <div>
+            this is param {params.id}.
+        </div>
+    )
 }
+
+export default page
